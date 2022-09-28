@@ -1,4 +1,5 @@
 import pygame
+import os
 
 WIDTH, HEIGHT = 900,1200
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -8,10 +9,15 @@ WHITE = 255, 255, 255
 
 FPS = 60
 
+ROCKET_IMAGE = pygame.image.load(os.path.join('Assets', 'rocket_shuttle.png'))
+ROCKET_TEST = pygame.transform.scale(ROCKET_IMAGE, (150, 150))
+
+ROCKET_START_POS = 400, 1050
+
 def draw_window():
     WIN.fill(WHITE)
+    WIN.blit(ROCKET_TEST, (ROCKET_START_POS))
     pygame.display.update()
-
 
 
 def main(): 
@@ -29,3 +35,4 @@ def main():
     
 if __name__ == "__main__":
     main()
+    
